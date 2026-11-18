@@ -1,16 +1,24 @@
-# React + Vite
+# Portafolio Profesional — Matías Nail (React + TypeScript)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Migración y modularización del portafolio personal de la Evaluación N°2 hacia una Single Page Application (SPA) desarrollada con **React**, **TypeScript**, **Vite** y **React Router**.
 
-Currently, two official plugins are available:
+## Referencia Visual (E2 vs E4)
+El diseño conserva la estructura asimétrica de dos columnas (barra lateral fija de navegación y contenido principal), paleta cromática (`#0f172a` y acentos `#5eead4`), tipografía y accesibilidad del portafolio original documentado en [`docs/captura-e2.png`](docs/captura-e2.png).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Contrato Técnico de la API Utilizada
+- **API seleccionada:** GitHub REST API.
+- **Endpoint:** `https://api.github.com/users/MatiasNail/repos?sort=updated&per_page=6`
+- **Justificación:** Permite sincronizar automáticamente los repositorios públicos más recientes del autor sin requerir autenticación ni exponer claves privadas.
+- **Estructura JSON esperada (`GitHubRepo[]`):**
+  ```json
+  [
+    {
+      "id": 123456,
+      "name": "nombre-repositorio",
+      "description": "Descripción del proyecto",
+      "html_url": "[https://github.com/MatiasNail/nombre-repositorio](https://github.com/MatiasNail/nombre-repositorio)",
+      "language": "TypeScript",
+      "stargazers_count": 0,
+      "updated_at": "2026-11-18T12:00:00Z"
+    }
+  ]
